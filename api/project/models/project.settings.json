@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "name": "project"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "private": false,
+      "required": true,
+      "unique": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "star": {
+      "default": 0,
+      "type": "integer"
+    },
+    "watch": {
+      "type": "integer",
+      "default": 0
+    },
+    "fork": {
+      "type": "integer",
+      "default": 0
+    },
+    "license": {
+      "type": "enumeration",
+      "enum": [
+        "MIT",
+        "GPL",
+        "BSD",
+        "Mozilla",
+        "Apache",
+        "LGPL"
+      ],
+      "default": "MIT"
+    },
+    "tag": {
+      "type": "string",
+      "unique": true
+    }
+  }
+}

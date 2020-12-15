@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "versions",
+  "info": {
+    "name": "version"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
