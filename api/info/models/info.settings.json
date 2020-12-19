@@ -1,8 +1,9 @@
 {
   "kind": "collectionType",
-  "collectionName": "people",
+  "collectionName": "infos",
   "info": {
-    "name": "people"
+    "name": "info",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -15,7 +16,16 @@
       "required": true,
       "unique": true
     },
-    "avatar": {
+    "github": {
+      "type": "string"
+    },
+    "blogUrl": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "photo": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
@@ -24,16 +34,15 @@
       "plugin": "upload",
       "required": false
     },
-    "url": {
-      "type": "string"
+    "followers": {
+      "collection": "people",
+      "via": "infos",
+      "dominant": true
     },
-    "user_infos": {
-      "via": "followings",
-      "collection": "user-info"
-    },
-    "infos": {
-      "via": "followings",
-      "collection": "info"
+    "followings": {
+      "collection": "people",
+      "via": "infos",
+      "dominant": true
     }
   }
 }

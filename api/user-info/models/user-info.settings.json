@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user-infos",
+  "info": {
+    "name": "user-info",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "github": {
+      "type": "string"
+    },
+    "blogUrl": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "photo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "followers": {
+      "collection": "people",
+      "via": "user_infos",
+      "dominant": true
+    },
+    "followings": {
+      "collection": "people",
+      "via": "user_infos",
+      "dominant": true
+    }
+  }
+}
